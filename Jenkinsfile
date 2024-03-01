@@ -1,7 +1,7 @@
 void setBuildStatus(String message, String state) {
   step([
       $class: "GitHubCommitStatusSetter",
-      reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/x24padua22/login_registration_javascript.git"],
+      reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/erickzkie027/login_registration_javascript.git"],
       contextSource: [$class: "ManuallyEnteredCommitContextSource", context: "ci/jenkins/build-status"],
       errorHandlers: [[$class: "ChangingBuildStatusErrorHandler", result: "UNSTABLE"]],
       statusResultSource: [ $class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]] ]
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     Integer port = 3000
-                    String directory = "/var/www/ec_app"
+                    String directory = "/var/www/login_app"
                     String staging_env = "staging_env"
 
                     echo "port is ${port}"
