@@ -14,7 +14,7 @@ targetBranch = ghprbTargetBranch
 
 pipeline {
     agent any
-    tools { nodejs "NodeJS" }
+
     
     stages {
         stage('Deploy Sample Instance') {
