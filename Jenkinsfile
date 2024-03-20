@@ -47,7 +47,9 @@ pipeline {
                             sh 'mv \$yaml_file ./configs'
                             sshPut remote: remote, from: "./configs/sample.env.yml", into: "/var/www/tmp_server_files/"
                         }
-
+                      
+                        sshCommand remote: remote, command: "sudo forever stopall"
+                        sshCommand remote: remote, command: "sudo forever start ${directory}/app.js"
                         sshCommand remote: remote, command: "sudo rm -rf ${directory}/configs/sample.env.yml"
                         sshCommand remote: remote, command: "sudo mv /var/www/tmp_server_files/sample.env.yml ${directory}/configs/"
                     }
