@@ -17,6 +17,7 @@ $(document).ready( () => {
                 location.reload();
             }
             else{
+                console.log(data);
                 alert(data.error);
             }
         }, "json");
