@@ -1,3 +1,4 @@
+//test pipline
 void setBuildStatus(String message, String state) {
   step([
       $class: "GitHubCommitStatusSetter",
