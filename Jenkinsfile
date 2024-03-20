@@ -15,7 +15,7 @@ targetBranch = ghprbTargetBranch
 pipeline {
     agent any
     //tools { nodejs "NodeJS" }
-    
+// test piplineasdasdasd    
     stages {
         stage('Deploy Sample Instance') {
             steps {
@@ -37,7 +37,7 @@ pipeline {
                             user: "ubuntu",
                             identityFile: SSH_KEY
                         ]
-// test piplineasdasdasd
+
                         echo "Fetch branch and checkout to change branch"
                         sshCommand remote: remote, command: "cd ${directory} && sudo git fetch"
                         sshCommand remote: remote, command: "cd ${directory} && sudo git checkout ${sourceBranch}"
