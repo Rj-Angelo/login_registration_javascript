@@ -50,6 +50,8 @@ pipeline {
 
                         sshCommand remote: remote, command: "sudo rm -rf ${directory}/configs/sample.env.yml"
                         sshCommand remote: remote, command: "sudo mv /var/www/tmp_server_files/sample.env.yml ${directory}/configs/"
+                        sshCommand remote: remote, command: "sudo forever stopall"
+                        sshCommand remote: remote, command: "sudo forever start app.js"
                     }
 
                     echo currentBuild.result
