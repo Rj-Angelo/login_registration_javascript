@@ -64,7 +64,8 @@ class UserController {
                         response_data.status = true;
                     }
                     else{
-                        response_data.error = "Error encountered while creating a user";
+                        response_data.error = create_user.error;
+                        //response_data.error = "Error encountered while creating a user";
                     }
                 }
             }
